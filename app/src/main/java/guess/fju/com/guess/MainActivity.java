@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -23,20 +24,23 @@ public class MainActivity extends AppCompatActivity {
         float number = Float.parseFloat(ednumber.getText().toString());
 
         if (number < n) {
-            new AlertDialog.Builder(this)
+            /*new AlertDialog.Builder(this)
                     .setMessage("大一點")
                     .setPositiveButton("OK", null)
-                    .show();
+                    .show();*/
+            Toast.makeText(this, "大一點", Toast.LENGTH_LONG).show();
         } else if (number > n) {
-            new AlertDialog.Builder(this)
+            /*new AlertDialog.Builder(this)
                     .setMessage("小一點")
                     .setPositiveButton("OK", null)
-                    .show();
+                    .show();*/
+            Toast.makeText(this, "小一點", Toast.LENGTH_LONG).show();
         } else if (number == n) {
-            new AlertDialog.Builder(this)
+            /*new AlertDialog.Builder(this)
                     .setMessage("答對了")
                     .setPositiveButton("OK", null)
-                    .show();
+                    .show();*/
+            Toast.makeText(this, "答對了", Toast.LENGTH_LONG).show();
         }
     }
     }
