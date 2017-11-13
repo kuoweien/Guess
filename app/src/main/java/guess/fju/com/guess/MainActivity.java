@@ -12,7 +12,9 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
     Random r = new Random();
-    int n = r.nextInt(10)+1;
+    int n = r.nextInt(100)+1;
+    int min = 1;
+    int max = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,26 +23,20 @@ public class MainActivity extends AppCompatActivity {
     }
     public void number(View view) {
         EditText ednumber = (EditText) findViewById(R.id.ed_number);
-        float number = Float.parseFloat(ednumber.getText().toString());
+        int number = Integer.parseInt(ednumber.getText().toString());
 
         if (number < n) {
-            /*new AlertDialog.Builder(this)
-                    .setMessage("大一點")
-                    .setPositiveButton("OK", null)
-                    .show();*/
-            Toast.makeText(this, "大一點", Toast.LENGTH_LONG).show();
+           min = number;
+            Toast.makeText(this, "請輸入"+min+"~"+max, Toast.LENGTH_LONG).show();
         } else if (number > n) {
-            /*new AlertDialog.Builder(this)
-                    .setMessage("小一點")
-                    .setPositiveButton("OK", null)
-                    .show();*/
-            Toast.makeText(this, "小一點", Toast.LENGTH_LONG).show();
+           max = number;
+            Toast.makeText(this, "請輸入"+min+"~"+max, Toast.LENGTH_LONG).show();
         } else if (number == n) {
-            /*new AlertDialog.Builder(this)
+            new AlertDialog.Builder(this)
                     .setMessage("答對了")
                     .setPositiveButton("OK", null)
-                    .show();*/
-            Toast.makeText(this, "答對了", Toast.LENGTH_LONG).show();
+                    .show();
+
         }
     }
     }
